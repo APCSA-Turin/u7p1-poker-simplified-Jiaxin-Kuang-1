@@ -47,25 +47,25 @@ public class Player{
             }
         }
         rankingString2 = rankingString.substring(4) + rankingString.substring(0, 4); 
-        if(rankingString.substring(8).equals("11111") && suitString.contains("5")){
+        if(rankingString.substring(8).equals("11111") && suitString.indexOf("5") > -1){
             return "Royal Flush";
         }
-        else if((rankingString.contains("11111") || rankingString2.contains("11111")) && suitString.contains("5")){
+        else if((rankingString.indexOf("11111") > -1 || rankingString2.indexOf("11111") > -1) && suitString.indexOf("5") > -1){
             return "Straight Flush";
         }
-        else if(rankingString.contains("4")){
+        else if(rankingString.indexOf("4") > -1){
             return "Four of a Kind";
         }
-        else if(rankingString.contains("3") && rankingString.contains("2")){
+        else if(rankingString.indexOf("3") > -1 && rankingString.indexOf("2") > -1){
             return "Full House";
         }
-        else if(suitString.contains("5")){
+        else if(suitString.indexOf("5") > -1){
             return "Flush";
         }
-        else if(rankingString.contains("11111") || rankingString2.contains("11111")){
+        else if(rankingString.indexOf("11111") > -1 || rankingString2.indexOf("11111") > -1){
             return "Straight";
         }
-        else if(rankingString.contains("3")){
+        else if(rankingString.indexOf("3") > -1){
             return "Three of a Kind";
         }
         else if(pairCount == 2){
@@ -74,7 +74,7 @@ public class Player{
         else if(pairCount == 1){
             return "A Pair";
         }
-        else if(hand.toString().contains("A")){
+        else if(hand.toString().indexOf("A") > -1){
             return "High Card";
         }
         else{
